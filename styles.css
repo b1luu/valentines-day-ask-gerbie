@@ -11,7 +11,32 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  background: #fff8fb;
+  background-color: #fffdf9;
+  background-image:
+    linear-gradient(
+      to right,
+      transparent 0,
+      transparent 44px,
+      rgba(255, 120, 150, 0.35) 44px,
+      rgba(255, 120, 150, 0.35) 46px,
+      transparent 46px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 26px,
+      rgba(0, 0, 0, 0.08) 26px,
+      rgba(0, 0, 0, 0.08) 27px
+    ),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.02)),
+    repeating-linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.015) 0,
+      rgba(0, 0, 0, 0.015) 2px,
+      transparent 2px,
+      transparent 8px
+    );
+  background-blend-mode: normal, normal, multiply, normal;
   color: #000;
   font-family: "Lato", sans-serif;
 }
@@ -19,6 +44,11 @@ body {
 .landing {
   text-align: center;
   padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
 }
 
 h1 {
@@ -40,8 +70,66 @@ h1 {
   opacity: 0.7;
 }
 
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 28px;
+}
+
+.choice-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: clamp(1.6rem, 6vw, 2.4rem);
+  font-weight: 700;
+  color: #000;
+  cursor: pointer;
+  user-select: none;
+}
+
+.choice-box input {
+  appearance: none;
+  width: 34px;
+  height: 34px;
+  border: 3px solid #000;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  margin: 0;
+}
+
+.choice-box input::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: #000;
+  opacity: 0;
+}
+
+.choice-box input:checked::after {
+  opacity: 1;
+}
+
+.choice-box input:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 4px;
+}
+
 @media (max-width: 600px) {
   .landing {
     padding: 20px 16px;
+    min-height: 60vh;
+  }
+
+  .choices {
+    gap: 24px;
+    margin-top: 22px;
+  }
+
+  .choice-box input {
+    width: 30px;
+    height: 30px;
   }
 }
