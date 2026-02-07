@@ -50,16 +50,23 @@ body {
   justify-content: center;
   min-height: 70vh;
   position: relative;
+  gap: 12px;
+}
+
+.gif-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  position: relative;
 }
 
 .pixel-bouquet {
-  position: absolute;
-  left: 0;
-  top: 42%;
+  position: relative;
   width: 1px;
   height: 1px;
   background: transparent;
-  transform: translate(-120px, -50%) scale(7);
+  transform: scale(7);
   transform-origin: left center;
   pointer-events: none;
   animation: bouquet-float 3.6s ease-in-out infinite;
@@ -300,7 +307,62 @@ h1 {
   width: min(260px, 70vw);
   height: auto;
   display: block;
-  margin: 12px auto 10px;
+  margin: 0;
+}
+
+.pixel-blanket {
+  position: relative;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  transform: scale(6);
+  transform-origin: left center;
+  pointer-events: none;
+  animation: blanket-wave 2.8s ease-in-out infinite;
+  box-shadow:
+    0px 0px 0 0 #d25d8f,
+    1px 0px 0 0 #d25d8f,
+    2px 0px 0 0 #d25d8f,
+    3px 0px 0 0 #d25d8f,
+    4px 0px 0 0 #d25d8f,
+    5px 0px 0 0 #d25d8f,
+    6px 0px 0 0 #d25d8f,
+    0px 1px 0 0 #f2c3d5,
+    1px 1px 0 0 #f2c3d5,
+    2px 1px 0 0 #f2c3d5,
+    3px 1px 0 0 #f2c3d5,
+    4px 1px 0 0 #f2c3d5,
+    5px 1px 0 0 #f2c3d5,
+    6px 1px 0 0 #f2c3d5,
+    0px 2px 0 0 #e28ab1,
+    1px 2px 0 0 #e28ab1,
+    2px 2px 0 0 #e28ab1,
+    3px 2px 0 0 #e28ab1,
+    4px 2px 0 0 #e28ab1,
+    5px 2px 0 0 #e28ab1,
+    6px 2px 0 0 #e28ab1,
+    0px 3px 0 0 #f2c3d5,
+    1px 3px 0 0 #f2c3d5,
+    2px 3px 0 0 #f2c3d5,
+    3px 3px 0 0 #f2c3d5,
+    4px 3px 0 0 #f2c3d5,
+    5px 3px 0 0 #f2c3d5,
+    6px 3px 0 0 #f2c3d5,
+    0px 4px 0 0 #e28ab1,
+    1px 4px 0 0 #e28ab1,
+    2px 4px 0 0 #e28ab1,
+    3px 4px 0 0 #e28ab1,
+    4px 4px 0 0 #e28ab1,
+    5px 4px 0 0 #e28ab1,
+    6px 4px 0 0 #e28ab1,
+    1px 5px 0 0 #f2c3d5,
+    2px 5px 0 0 #f2c3d5,
+    3px 5px 0 0 #f2c3d5,
+    4px 5px 0 0 #f2c3d5,
+    5px 5px 0 0 #f2c3d5,
+    2px 6px 0 0 #e28ab1,
+    3px 6px 0 0 #e28ab1,
+    4px 6px 0 0 #e28ab1;
 }
 
 .hint {
@@ -359,10 +421,10 @@ h1 {
 @keyframes bouquet-float {
   0%,
   100% {
-    transform: translate(-120px, -50%) scale(7) rotate(-2deg);
+    transform: scale(7) rotate(-2deg);
   }
   50% {
-    transform: translate(-120px, calc(-50% - 6px)) scale(7) rotate(2deg);
+    transform: translateY(-6px) scale(7) rotate(2deg);
   }
 }
 
@@ -373,6 +435,16 @@ h1 {
   }
   50% {
     opacity: 1;
+  }
+}
+
+@keyframes blanket-wave {
+  0%,
+  100% {
+    transform: scale(6) rotate(0deg);
+  }
+  50% {
+    transform: scale(6) rotate(2deg);
   }
 }
 
@@ -393,17 +465,35 @@ h1 {
   }
 
   .pixel-bouquet {
-    transform: translate(-90px, -50%) scale(6);
-    top: 38%;
+    transform: scale(5);
   }
 
   @keyframes bouquet-float {
     0%,
     100% {
-      transform: translate(-90px, -50%) scale(6) rotate(-2deg);
+      transform: scale(5) rotate(-2deg);
     }
     50% {
-      transform: translate(-90px, calc(-50% - 5px)) scale(6) rotate(2deg);
+      transform: translateY(-5px) scale(5) rotate(2deg);
+    }
+  }
+
+  .gif-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .pixel-blanket {
+    transform: scale(5);
+  }
+
+  @keyframes blanket-wave {
+    0%,
+    100% {
+      transform: scale(5) rotate(0deg);
+    }
+    50% {
+      transform: scale(5) rotate(2deg);
     }
   }
 }
