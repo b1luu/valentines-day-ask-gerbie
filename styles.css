@@ -13,7 +13,7 @@ body {
   place-items: center;
   background: #fff8fb;
   color: #000;
-  font-family: "Caveat", "Comic Sans MS", cursive;
+  font-family: "Lato", sans-serif;
 }
 
 .landing {
@@ -25,6 +25,13 @@ h1 {
   margin: 0 0 8px;
   font-size: clamp(2.4rem, 8vw, 4.5rem);
   font-weight: 700;
+}
+
+.landing-gif {
+  width: min(260px, 70vw);
+  height: auto;
+  display: block;
+  margin: 12px auto 10px;
 }
 
 .hint {
