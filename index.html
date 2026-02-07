@@ -1,0 +1,129 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Valentine QR Setup</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div class="hero-text">
+          <p class="eyebrow">quick little thing</p>
+          <h1>Scan the QR</h1>
+          <p class="subhead">
+            I made a simple little page. Paste the link below and you're done. She scans and the
+            big question pops up with room for GIFs and photos.
+          </p>
+          <div class="tag-row">
+            <span class="tag">cute</span>
+            <span class="tag">goofy</span>
+            <span class="tag">low-key</span>
+          </div>
+          <div class="date-chip">Feb 14</div>
+        </div>
+        <div class="hero-photos">
+          <figure class="polaroid">
+            <div class="photo-slot" data-label="Photo 1"></div>
+            <figcaption>Favorite moment</figcaption>
+          </figure>
+          <figure class="polaroid tilt">
+            <div class="photo-slot" data-label="Photo 2"></div>
+            <figcaption>Silly memory</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <div class="photo-slot" data-label="Photo 3"></div>
+            <figcaption>Future vibes</figcaption>
+          </figure>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="phone-panel">
+          <div class="phone">
+            <div class="speaker"></div>
+            <div class="screen">
+              <div class="qr-card">
+                <div class="qr-box">
+                  <canvas id="qr-canvas" class="qr-canvas" width="220" height="220" aria-hidden="true"></canvas>
+                  <div class="qr-grid" aria-hidden="true"></div>
+                </div>
+                <p class="qr-caption">Scan me for a tiny surprise</p>
+                <label class="field">
+                  <span>QR link</span>
+                  <input id="qr-link" type="url" placeholder="Paste the share link for ask.html" />
+                </label>
+                <div class="preview-row">
+                  <a class="cta ghost" href="ask.html">Open the surprise page</a>
+                  <p class="tiny">This opens your local preview. Paste a public link for sharing.</p>
+                </div>
+                <p class="qr-note" id="qr-note">
+                  Placeholder pattern is showing. If the QR library loads, it will generate a real code.
+                </p>
+              </div>
+              <div class="mini-notes">
+                <div class="note">Tape a tiny bow to your phone case</div>
+                <div class="note">Practice your best: casual-but-cute smile</div>
+              </div>
+            </div>
+          </div>
+          <div class="callouts">
+            <div class="callout">
+              <h3>Make it yours</h3>
+              <p>Swap the photos, tweak the colors, and add your favorite inside jokes.</p>
+            </div>
+            <div class="callout">
+              <h3>Share anywhere</h3>
+              <p>Show the QR on your phone or print it on a tiny card.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="invite-panel">
+          <div class="invite-card">
+            <p class="invite-kicker">Setup</p>
+            <h2>Point the QR to the big question</h2>
+            <p class="invite-copy">
+              Quick setup: get a public link to <strong>ask.html</strong>, paste it into the QR
+              box, and you're good.
+            </p>
+            <ol class="steps">
+              <li>Upload this folder to a host or share service.</li>
+              <li>Copy the public link to <strong>ask.html</strong>.</li>
+              <li>Paste it into the QR link box.</li>
+            </ol>
+
+            <div class="divider"></div>
+
+            <h3>What she will see</h3>
+            <div class="preview-card">
+              <p class="preview-title">Would you be my Valentine?</p>
+              <p class="preview-sub">A cute page with GIF slots, photos, and date options.</p>
+              <span class="preview-pill">ask.html</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>Add your stuff</h3>
+            <div class="pill-grid">
+              <span class="pill">GIF moments</span>
+              <span class="pill">Photos</span>
+              <span class="pill">Date ideas</span>
+              <span class="pill">Playlist picks</span>
+              <span class="pill">Sweet notes</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

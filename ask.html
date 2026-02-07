@@ -1,0 +1,134 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page ask-page">
+      <header class="hero ask-hero">
+        <div class="hero-text">
+          <p class="eyebrow">you scanned it</p>
+          <h1>Will you be my Valentine?</h1>
+          <p class="subhead">
+            I made this little page because I'm nervous to ask out loud. Pick what sounds fun and
+            I'll make it happen.
+          </p>
+          <div class="tag-row">
+            <span class="tag">soft hearts</span>
+            <span class="tag">silly giggles</span>
+            <span class="tag">sweet plans</span>
+          </div>
+          <div class="date-chip">Feb 14</div>
+        </div>
+        <div class="gif-grid">
+          <div class="gif-slot" data-label="Add cute GIF"></div>
+          <div class="gif-slot" data-label="Add goofy GIF"></div>
+          <div class="gif-slot" data-label="Add us GIF"></div>
+          <div class="gif-slot" data-label="Add surprise GIF"></div>
+        </div>
+      </header>
+
+      <main class="ask-main">
+        <section class="invite-card">
+          <p class="invite-kicker">The Question</p>
+          <h2>Will you be my Valentine?</h2>
+          <p class="invite-copy">
+            No pressure, just vibes. Pick what feels right and I'll take care of the rest.
+          </p>
+
+          <div class="choice-grid">
+            <label class="choice">
+              <input type="radio" name="answer" checked />
+              <span>Yes, please</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="answer" />
+              <span>Heck yes</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="answer" />
+              <span>Tell me more</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="answer" />
+              <span>Another day maybe?</span>
+            </label>
+          </div>
+
+          <div class="divider"></div>
+
+          <h3>What kind of date sounds fun?</h3>
+          <div class="chip-grid">
+            <label class="chip"><input type="checkbox" checked /> Cozy movie night</label>
+            <label class="chip"><input type="checkbox" /> Fancy dinner</label>
+            <label class="chip"><input type="checkbox" /> Picnic and stargazing</label>
+            <label class="chip"><input type="checkbox" /> Arcade and ice cream</label>
+            <label class="chip"><input type="checkbox" /> Coffee and bookstore</label>
+            <label class="chip"><input type="checkbox" /> Museum and dessert</label>
+            <label class="chip"><input type="checkbox" /> Cook together</label>
+            <label class="chip"><input type="checkbox" /> Surprise me</label>
+          </div>
+
+          <div class="two-col">
+            <label class="field">
+              <span>Pick a time</span>
+              <input type="time" />
+            </label>
+            <label class="field">
+              <span>Vibe</span>
+              <select>
+                <option>Romantic</option>
+                <option>Goofy</option>
+                <option>Cozy</option>
+                <option>Adventurous</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Other ideas</span>
+            <input type="text" placeholder="Add your dream date" />
+          </label>
+
+          <label class="field">
+            <span>Notes for me</span>
+            <textarea rows="3" placeholder="Food allergies, favorite flowers, or any sweet hints"></textarea>
+          </label>
+
+          <button class="cta" type="button">Send your picks</button>
+          <p class="tiny">Template only. Connect a form if you want to collect responses.</p>
+        </section>
+
+        <section class="extras">
+          <div class="memory-strip">
+            <div class="photo-slot" data-label="Add photo"></div>
+            <div class="photo-slot" data-label="Add photo"></div>
+            <div class="photo-slot" data-label="Add photo"></div>
+          </div>
+          <div class="gif-strip">
+            <div class="gif-slot" data-label="Extra GIF"></div>
+            <div class="gif-slot" data-label="Extra GIF"></div>
+          </div>
+          <div class="playlist-card">
+            <h3>Optional playlist</h3>
+            <p>Add 3 songs that feel like your vibe.</p>
+            <div class="song-row">
+              <span class="song-tag">Song 1</span>
+              <span class="song-tag">Song 2</span>
+              <span class="song-tag">Song 3</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
