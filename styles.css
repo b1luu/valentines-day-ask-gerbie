@@ -52,123 +52,242 @@ body {
   position: relative;
 }
 
-.bouquet {
+.pixel-bouquet {
   position: absolute;
   left: 0;
-  top: 40%;
-  width: 240px;
-  height: 260px;
-  transform: translate(-110px, -50%);
-  pointer-events: none;
-}
-
-.pixel-flower {
-  --petal: #e85a7f;
-  --center: #ffd166;
-  --leaf: #3e8b47;
-  --x: 0px;
-  --y: 0px;
-  --scale: 7;
-  --delay: 0s;
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  transform-origin: center;
-  transform: translate(var(--x), var(--y)) scale(var(--scale));
-  animation: flower-bob 3.4s ease-in-out infinite;
-  animation-delay: var(--delay);
-}
-
-.pixel-flower::before,
-.pixel-flower::after {
-  content: "";
-  position: absolute;
-  inset: 0;
+  top: 42%;
   width: 1px;
   height: 1px;
   background: transparent;
-}
-
-.pixel-flower::before {
+  transform: translate(-120px, -50%) scale(7);
+  transform-origin: left center;
+  pointer-events: none;
+  animation: bouquet-float 3.6s ease-in-out infinite;
   box-shadow:
-    2px 0 0 0 var(--petal),
-    3px 0 0 0 var(--petal),
-    1px 1px 0 0 var(--petal),
-    2px 1px 0 0 var(--petal),
-    3px 1px 0 0 var(--petal),
-    4px 1px 0 0 var(--petal),
-    0px 2px 0 0 var(--petal),
-    1px 2px 0 0 var(--petal),
-    2px 2px 0 0 var(--petal),
-    3px 2px 0 0 var(--petal),
-    4px 2px 0 0 var(--petal),
-    5px 2px 0 0 var(--petal),
-    1px 3px 0 0 var(--petal),
-    2px 3px 0 0 var(--petal),
-    3px 3px 0 0 var(--petal),
-    4px 3px 0 0 var(--petal),
-    2px 4px 0 0 var(--petal),
-    3px 4px 0 0 var(--petal);
-  animation: petals-pulse 1.4s ease-in-out infinite;
+    5px 3px 0 0 #e63b4f,
+    4px 4px 0 0 #e63b4f,
+    6px 4px 0 0 #e63b4f,
+    5px 5px 0 0 #e63b4f,
+    4px 3px 0 0 #e63b4f,
+    6px 3px 0 0 #e63b4f,
+    4px 5px 0 0 #e63b4f,
+    6px 5px 0 0 #e63b4f,
+    9px 1px 0 0 #ff7fa0,
+    8px 2px 0 0 #ff7fa0,
+    10px 2px 0 0 #ff7fa0,
+    9px 3px 0 0 #ff7fa0,
+    8px 1px 0 0 #ff7fa0,
+    10px 1px 0 0 #ff7fa0,
+    8px 3px 0 0 #ff7fa0,
+    10px 3px 0 0 #ff7fa0,
+    3px 5px 0 0 #b44dd8,
+    2px 6px 0 0 #b44dd8,
+    4px 6px 0 0 #b44dd8,
+    3px 7px 0 0 #b44dd8,
+    2px 5px 0 0 #b44dd8,
+    4px 5px 0 0 #b44dd8,
+    2px 7px 0 0 #b44dd8,
+    4px 7px 0 0 #b44dd8,
+    12px 3px 0 0 #4aa3ff,
+    11px 4px 0 0 #4aa3ff,
+    13px 4px 0 0 #4aa3ff,
+    12px 5px 0 0 #4aa3ff,
+    11px 3px 0 0 #4aa3ff,
+    13px 3px 0 0 #4aa3ff,
+    11px 5px 0 0 #4aa3ff,
+    13px 5px 0 0 #4aa3ff,
+    8px 5px 0 0 #ff9f43,
+    7px 6px 0 0 #ff9f43,
+    9px 6px 0 0 #ff9f43,
+    8px 7px 0 0 #ff9f43,
+    7px 5px 0 0 #ff9f43,
+    9px 5px 0 0 #ff9f43,
+    7px 7px 0 0 #ff9f43,
+    9px 7px 0 0 #ff9f43,
+    11px 6px 0 0 #f6f1ee,
+    10px 7px 0 0 #f6f1ee,
+    12px 7px 0 0 #f6f1ee,
+    11px 8px 0 0 #f6f1ee,
+    10px 6px 0 0 #f6f1ee,
+    12px 6px 0 0 #f6f1ee,
+    5px 4px 0 0 #ffd166,
+    12px 4px 0 0 #ffd166,
+    8px 6px 0 0 #ffd166,
+    11px 7px 0 0 #ffd166,
+    9px 2px 0 0 #ffe59a,
+    3px 6px 0 0 #ffe59a,
+    5px 8px 0 0 #4aa854,
+    5px 9px 0 0 #4aa854,
+    5px 10px 0 0 #4aa854,
+    5px 11px 0 0 #4aa854,
+    7px 8px 0 0 #4aa854,
+    7px 9px 0 0 #4aa854,
+    7px 10px 0 0 #4aa854,
+    7px 11px 0 0 #4aa854,
+    7px 12px 0 0 #4aa854,
+    8px 8px 0 0 #4aa854,
+    8px 9px 0 0 #4aa854,
+    8px 10px 0 0 #4aa854,
+    8px 11px 0 0 #4aa854,
+    8px 12px 0 0 #4aa854,
+    9px 8px 0 0 #4aa854,
+    9px 9px 0 0 #4aa854,
+    9px 10px 0 0 #4aa854,
+    9px 11px 0 0 #4aa854,
+    9px 12px 0 0 #4aa854,
+    11px 8px 0 0 #4aa854,
+    11px 9px 0 0 #4aa854,
+    11px 10px 0 0 #4aa854,
+    11px 11px 0 0 #4aa854,
+    6px 9px 0 0 #3e8b47,
+    6px 10px 0 0 #3e8b47,
+    6px 11px 0 0 #3e8b47,
+    10px 9px 0 0 #3e8b47,
+    10px 10px 0 0 #3e8b47,
+    10px 11px 0 0 #3e8b47,
+    4px 10px 0 0 #3e8b47,
+    6px 12px 0 0 #3e8b47,
+    12px 10px 0 0 #3e8b47,
+    7px 13px 0 0 #3e8b47,
+    9px 13px 0 0 #3e8b47,
+    4px 13px 0 0 #d9d9d9,
+    5px 13px 0 0 #d9d9d9,
+    6px 13px 0 0 #d9d9d9,
+    7px 13px 0 0 #d9d9d9,
+    8px 13px 0 0 #d9d9d9,
+    9px 13px 0 0 #d9d9d9,
+    10px 13px 0 0 #d9d9d9,
+    11px 13px 0 0 #d9d9d9,
+    12px 13px 0 0 #d9d9d9,
+    3px 14px 0 0 #d9d9d9,
+    4px 14px 0 0 #d9d9d9,
+    5px 14px 0 0 #d9d9d9,
+    6px 14px 0 0 #d9d9d9,
+    7px 14px 0 0 #d9d9d9,
+    8px 14px 0 0 #d9d9d9,
+    9px 14px 0 0 #d9d9d9,
+    10px 14px 0 0 #d9d9d9,
+    11px 14px 0 0 #d9d9d9,
+    12px 14px 0 0 #d9d9d9,
+    13px 14px 0 0 #d9d9d9,
+    2px 15px 0 0 #d9d9d9,
+    3px 15px 0 0 #d9d9d9,
+    4px 15px 0 0 #d9d9d9,
+    5px 15px 0 0 #d9d9d9,
+    6px 15px 0 0 #d9d9d9,
+    7px 15px 0 0 #d9d9d9,
+    8px 15px 0 0 #d9d9d9,
+    9px 15px 0 0 #d9d9d9,
+    10px 15px 0 0 #d9d9d9,
+    11px 15px 0 0 #d9d9d9,
+    12px 15px 0 0 #d9d9d9,
+    13px 15px 0 0 #d9d9d9,
+    14px 15px 0 0 #d9d9d9,
+    3px 16px 0 0 #d9d9d9,
+    4px 16px 0 0 #d9d9d9,
+    5px 16px 0 0 #d9d9d9,
+    6px 16px 0 0 #d9d9d9,
+    7px 16px 0 0 #d9d9d9,
+    8px 16px 0 0 #d9d9d9,
+    9px 16px 0 0 #d9d9d9,
+    10px 16px 0 0 #d9d9d9,
+    11px 16px 0 0 #d9d9d9,
+    12px 16px 0 0 #d9d9d9,
+    13px 16px 0 0 #d9d9d9,
+    4px 17px 0 0 #d9d9d9,
+    5px 17px 0 0 #d9d9d9,
+    6px 17px 0 0 #d9d9d9,
+    7px 17px 0 0 #d9d9d9,
+    8px 17px 0 0 #d9d9d9,
+    9px 17px 0 0 #d9d9d9,
+    10px 17px 0 0 #d9d9d9,
+    11px 17px 0 0 #d9d9d9,
+    12px 17px 0 0 #d9d9d9,
+    5px 18px 0 0 #d9d9d9,
+    6px 18px 0 0 #d9d9d9,
+    7px 18px 0 0 #d9d9d9,
+    8px 18px 0 0 #d9d9d9,
+    9px 18px 0 0 #d9d9d9,
+    10px 18px 0 0 #d9d9d9,
+    11px 18px 0 0 #d9d9d9,
+    6px 19px 0 0 #d9d9d9,
+    7px 19px 0 0 #d9d9d9,
+    8px 19px 0 0 #d9d9d9,
+    9px 19px 0 0 #d9d9d9,
+    10px 19px 0 0 #d9d9d9,
+    7px 20px 0 0 #d9d9d9,
+    8px 20px 0 0 #d9d9d9,
+    9px 20px 0 0 #d9d9d9,
+    12px 13px 0 0 #b7b7b7,
+    12px 14px 0 0 #b7b7b7,
+    13px 14px 0 0 #b7b7b7,
+    13px 15px 0 0 #b7b7b7,
+    14px 15px 0 0 #b7b7b7,
+    12px 16px 0 0 #b7b7b7,
+    13px 16px 0 0 #b7b7b7,
+    11px 17px 0 0 #b7b7b7,
+    12px 17px 0 0 #b7b7b7,
+    10px 18px 0 0 #b7b7b7,
+    11px 18px 0 0 #b7b7b7,
+    9px 19px 0 0 #b7b7b7,
+    10px 19px 0 0 #b7b7b7,
+    8px 20px 0 0 #b7b7b7,
+    9px 20px 0 0 #b7b7b7,
+    4px 2px 0 0 #2b2b2b,
+    5px 2px 0 0 #2b2b2b,
+    6px 2px 0 0 #2b2b2b,
+    8px 0px 0 0 #2b2b2b,
+    9px 0px 0 0 #2b2b2b,
+    10px 0px 0 0 #2b2b2b,
+    1px 5px 0 0 #2b2b2b,
+    1px 6px 0 0 #2b2b2b,
+    1px 7px 0 0 #2b2b2b,
+    14px 3px 0 0 #2b2b2b,
+    14px 4px 0 0 #2b2b2b,
+    14px 5px 0 0 #2b2b2b,
+    4px 12px 0 0 #2b2b2b,
+    5px 12px 0 0 #2b2b2b,
+    6px 12px 0 0 #2b2b2b,
+    7px 12px 0 0 #2b2b2b,
+    8px 12px 0 0 #2b2b2b,
+    9px 12px 0 0 #2b2b2b,
+    10px 12px 0 0 #2b2b2b,
+    11px 12px 0 0 #2b2b2b,
+    12px 12px 0 0 #2b2b2b,
+    3px 13px 0 0 #2b2b2b,
+    13px 13px 0 0 #2b2b2b,
+    2px 14px 0 0 #2b2b2b,
+    14px 14px 0 0 #2b2b2b,
+    1px 15px 0 0 #2b2b2b,
+    15px 15px 0 0 #2b2b2b,
+    2px 16px 0 0 #2b2b2b,
+    14px 16px 0 0 #2b2b2b,
+    3px 17px 0 0 #2b2b2b,
+    13px 17px 0 0 #2b2b2b,
+    4px 18px 0 0 #2b2b2b,
+    12px 18px 0 0 #2b2b2b,
+    5px 19px 0 0 #2b2b2b,
+    11px 19px 0 0 #2b2b2b,
+    6px 20px 0 0 #2b2b2b,
+    10px 20px 0 0 #2b2b2b,
+    7px 21px 0 0 #2b2b2b,
+    8px 21px 0 0 #2b2b2b,
+    9px 21px 0 0 #2b2b2b;
 }
 
-.pixel-flower::after {
+.pixel-bouquet::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  animation: petals-glow 1.6s ease-in-out infinite;
   box-shadow:
-    2px 2px 0 0 var(--center),
-    3px 2px 0 0 var(--center),
-    2px 3px 0 0 var(--center),
-    3px 3px 0 0 var(--center),
-    2px 5px 0 0 var(--leaf),
-    2px 6px 0 0 var(--leaf),
-    2px 7px 0 0 var(--leaf),
-    2px 8px 0 0 var(--leaf),
-    1px 7px 0 0 var(--leaf),
-    3px 7px 0 0 var(--leaf);
-}
-
-.f1 {
-  --x: 80px;
-  --y: 20px;
-  --scale: 7.8;
-  --petal: #e85a7f;
-  --center: #ffd166;
-  --delay: 0s;
-}
-
-.f2 {
-  --x: 20px;
-  --y: 80px;
-  --scale: 7.1;
-  --petal: #ff8fa3;
-  --center: #ffe59a;
-  --delay: 0.2s;
-}
-
-.f3 {
-  --x: 115px;
-  --y: 110px;
-  --scale: 6.7;
-  --petal: #f07f65;
-  --center: #ffd166;
-  --delay: 0.4s;
-}
-
-.f4 {
-  --x: 60px;
-  --y: 160px;
-  --scale: 6.9;
-  --petal: #d76ad7;
-  --center: #ffe59a;
-  --delay: 0.1s;
-}
-
-.f5 {
-  --x: 145px;
-  --y: 170px;
-  --scale: 7.2;
-  --petal: #ff6b88;
-  --center: #ffd166;
-  --delay: 0.3s;
+    5px 3px 0 0 rgba(255, 255, 255, 0.7),
+    9px 1px 0 0 rgba(255, 255, 255, 0.6),
+    12px 3px 0 0 rgba(255, 255, 255, 0.6),
+    8px 5px 0 0 rgba(255, 255, 255, 0.5),
+    3px 5px 0 0 rgba(255, 255, 255, 0.5);
 }
 
 h1 {
@@ -237,25 +356,23 @@ h1 {
   outline-offset: 4px;
 }
 
-@keyframes flower-bob {
+@keyframes bouquet-float {
   0%,
   100% {
-    transform: translate(var(--x), var(--y)) scale(var(--scale)) rotate(-2deg);
+    transform: translate(-120px, -50%) scale(7) rotate(-2deg);
   }
   50% {
-    transform: translate(var(--x), calc(var(--y) - 6px)) scale(var(--scale)) rotate(2deg);
+    transform: translate(-120px, calc(-50% - 6px)) scale(7) rotate(2deg);
   }
 }
 
-@keyframes petals-pulse {
+@keyframes petals-glow {
   0%,
   100% {
-    transform: translate(0, 0) scale(1);
-    filter: brightness(1);
+    opacity: 0.35;
   }
   50% {
-    transform: translate(0, -1px) scale(1.08);
-    filter: brightness(1.1);
+    opacity: 1;
   }
 }
 
@@ -275,8 +392,18 @@ h1 {
     height: 30px;
   }
 
-  .bouquet {
-    transform: translate(-80px, -50%);
-    top: 35%;
+  .pixel-bouquet {
+    transform: translate(-90px, -50%) scale(6);
+    top: 38%;
+  }
+
+  @keyframes bouquet-float {
+    0%,
+    100% {
+      transform: translate(-90px, -50%) scale(6) rotate(-2deg);
+    }
+    50% {
+      transform: translate(-90px, calc(-50% - 5px)) scale(6) rotate(2deg);
+    }
   }
 }
