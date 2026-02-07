@@ -28,16 +28,20 @@
           <span>No</span>
         </label>
       </div>
-      <button class="start-button" id="start-button" type="button">
+      <a class="start-button" id="start-button" href="#">
         <img src="buttons/start.png" alt="Minecraft-style start button" />
-      </button>
+      </a>
     </main>
     <script>
       const startButton = document.getElementById("start-button");
+      const updateStartTarget = () => {
+        const selected = document.querySelector('input[name="answer"]:checked');
+        if (!selected) return;
+        startButton.href = selected.value === "yes" ? "yes.html" : "no.html";
+        startButton.classList.add("visible");
+      };
       document.querySelectorAll('input[name="answer"]').forEach((input) => {
-        input.addEventListener("change", () => {
-          startButton.classList.add("visible");
-        });
+        input.addEventListener("change", updateStartTarget);
       });
     </script>
   </body>

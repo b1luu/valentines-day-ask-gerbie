@@ -412,6 +412,21 @@ h1 {
   display: block;
 }
 
+.back-button {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 2px solid #000;
+  padding-bottom: 2px;
+}
+
+.back-button:hover {
+  opacity: 0.7;
+}
+
 .choice-box {
   display: flex;
   align-items: center;
