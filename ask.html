@@ -28,6 +28,17 @@
           <span>No</span>
         </label>
       </div>
+      <button class="start-button" id="start-button" type="button">
+        <img src="start.png" alt="Minecraft-style start button" />
+      </button>
     </main>
+    <script>
+      const startButton = document.getElementById("start-button");
+      document.querySelectorAll('input[name="answer"]').forEach((input) => {
+        input.addEventListener("change", () => {
+          startButton.classList.add("visible");
+        });
+      });
+    </script>
   </body>
 </html>
