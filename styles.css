@@ -499,6 +499,11 @@ a.cta {
   align-items: center;
 }
 
+.ask-page .ask-landing {
+  min-height: 70vh;
+  place-items: center;
+}
+
 .ask-card {
   background: #fff;
   padding: 24px;
@@ -675,6 +680,22 @@ a.cta {
 @media (max-width: 600px) {
   .page {
     padding: 22px 16px 36px;
+  }
+
+  .ask-page .ask-landing {
+    min-height: 60vh;
+  }
+
+  .ask-title {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .ask-sub {
+    font-size: 0.95rem;
+  }
+
+  .button-row.simple {
+    gap: 22px;
   }
 
   .hero {
